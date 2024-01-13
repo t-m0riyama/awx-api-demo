@@ -73,6 +73,11 @@ def main(page: ft.Page):
 
 if __name__ == '__main__':
     logging.basicConfig(level=logging.INFO)
+
+    # for develop
     flet_path = os.getenv("FLET_PATH", DEFAULT_FLET_PATH)
     flet_port = int(os.getenv('FLET_PORT', DEFAULT_FLET_PORT))
     ft.app(name=flet_path, target=main, port=flet_port, view=None)
+
+    # for packaging
+    # ft.app(target=main)
