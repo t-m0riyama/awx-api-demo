@@ -8,10 +8,10 @@ class LoginView(ft.View):
     """Login View"""
 
     # const
-    DEFAULT_awx_url = 'https://gzbox01.moriyama.internal:8043'
+    default_awx_url = 'https://gzbox01.moriyama.internal:8043'
 
     def __init__(self, session, page: ft.Page):
-        default_awx_url = os.getenv('awx_url', self.DEFAULT_awx_url)
+        default_awx_url = os.getenv('AWX_URL', self.default_awx_url)
         formLogin = LoginForm(session=session, page=page,
                               default_awx_url=default_awx_url)
         controls = [
